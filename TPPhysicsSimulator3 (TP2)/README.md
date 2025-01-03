@@ -1,0 +1,1 @@
+Proyecto final de la asignatura Tecnologia de la Programación 2, cursada en el 2o año de la carrera. Lenguaje: Java
