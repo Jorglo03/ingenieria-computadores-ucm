@@ -1,0 +1,55 @@
+Material proporcionado
+======================
+main.cpp: El programa principal que realiza la prueba del
+algoritmo solicitado y el prototipo de la función que 
+debe ejecutar dicho algoritmo (bool es_jugable(const Arbin<int>& juego, int energia_inicial)). 
+Aparte de dicha función, pueden implementarse todos
+los subprogramas auxiliares que se considere oportuno.
+Debe indicarse, así mismo, la complejidad resultante
+en el comentario que precede a la función.
+
+IMPORTANTE: Deben ponerse el nombre y apellidos, así como el número de
+usuario en el juez asignado en el examen, al comienzo del archivo main.cpp
+
+
+Formato de la entrada
+=====================
+Cada caso consta de la descripción de un juego como un árbol binario, 
+seguido de la energía inicial.
+Para describir los árboles se sigue el siguiente convenio:
+-Los árboles vacíos se escriben como #
+-Los árboles simples se escriben como [c],
+ con 'c' el contenido del nodo.
+-Los árboles compuestos se escriben como 
+ (IcD), donde: (i) I es el hijo izquierdo;
+ (ii) c es el contenido de la raiz; 
+ (iii) D es el hijo derecho. 
+ 
+ La lista de casos se termina con el árbol vacío #. 
+
+Formato de la salida
+====================
+Para cada caso se escribe SI si el juego es jugable con
+la energía incial proporcionada, y NO en caso contrario.
+
+Ejemplo de entrada
+==================
+((#4[0])5([0]4#)) 5
+((#4[0])5([0]4#)) 4
+((#4[0])5([0]4#)) 6
+(((#3([0]4#))4(#2[0]))3(#2[0])) 4
+(((#3([0]4#))4(#2[0]))3(#2[0])) 3
+#
+
+Salida asociada
+===============
+SI
+NO
+NO
+SI
+NO
+
+Nota: Los tres primeros casos se corresponden con el primer ejemplo del enunciado.
+      Los dos segundos con el segundo ejemplo.
+
+

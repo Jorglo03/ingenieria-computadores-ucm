@@ -1,0 +1,130 @@
+Material proporcionado
+======================
+main.cpp: El programa principal que lee y ejecuta casos. 
+Dicho programa NO debe modificarse.
+
+yoMeVacuno.h:  Definición de la parte pública de la clase "YoMeVacuno" 
+y otras definiciones auxiliares. A esta definición 
+deben añadirse los detalles de representación, en la parte privada. 
+Así mismo, en este archivo podrán realizarse las definiciones auxiliares 
+e inclusiones de bibliotecas que se consideren oportunas.
+
+yoMeVacuno.cpp: Aquí deben implementarse las operaciones del TAD.
+Aparte de implementar los distintos métodos de la clase, deberá indicarse
+y justificarse su complejidad en los comentarios que los preceden.
+En este archivo puede implementarse también todos aquellos métodos 
+auxiliares que se consideren oportunos. 
+
+IMPORTANTE: Deben ponerse el nombre y apellidos, así como el número de
+usuario en el juez asignado en el examen, al comienzo de los archivos yoMeVacuno.h 
+y yoMeVacuno.cpp
+
+Formato de los archivos de entrada 
+==================================
+El main comienza leyendo el año y el número de vacunas iniciales, y,
+a continuación, lee y ejecuta una serie de órdenes correspondientes a
+acciones a realizar sobre el sistema para la gestión de la vacunación.
+
+Las posibles órdenes son las siguientes:
+
+-registraCentro id direccion
+Registra un centro con id 'id' y direccion 'direccion'.
+Imprime REGISTRO_CENTRO_OK si todo ha ido bien, 
+o ID_CENTRO_DUPLICADO si el centro estaba ya registrado.
+
+-registraCiudadano id anioNacimiento
+Registra un ciudadano no vacunado con id 'id',
+nacido en 'anioNacimiento'. 
+Imprime REGISTRO_CIUDADANO_OK si todo ha ido bien, 
+o ID_CIUDADANO_DUPLICADO si el ciudadano estaba ya registrado.
+
+-anioYvacunas anio nvacunas
+Fija el año de vacunación a 'anio' y añade 
+'nvacunas' vacunas al sistema. 
+Imprime FIJADOS_ANIO_NUMVACUNAS
+
+-pideCita idCiudadano
+Registra una solicitud de cita por parte del ciudadano
+'idCiudadano'. 
+Imprime REGISTRO_CITA_OK si todo ha ido bien,
+o ERROR_REGISTRO_CITA en otro caso. 
+
+-enEspera
+Imprime HAY_PETICIONES si hay solicitudes de cita en espera,
+o NO_HAY_PETICIONES si no hay solicitudes de cita en espera.
+
+-atiendeSolicitudes
+Realiza el proceso de atención de solicitudes de cita, e imprime
+las asignaciones de ciudadanos a centros realizadas.
+En caso de que no haya centros imprime NO_HAY_CENTROS_ACTIVOS.
+
+-administra idCentro
+Registra la administración de la vacuna al primer ciudadano
+asignado al centro 'idCentro', en caso de que haya alguien
+esperando. En este caso, imprime ADMINISTRADA. Si no hay
+nadie en espera, imprime NO_ADMINISTRADA. Si el centro no
+existe, imprime CENTRO_INEXISTENTE
+
+
+EJEMPLO DE ENTRADA
+==================
+1985 3
+registraCentro 528 cinico_san_carlos
+registraCentro 134 gregorio_sabanion
+registraCiudadano 5432 1985
+registraCiudadano 5431 1985
+registraCiudadano 4437 1985
+registraCiudadano 4417 1985
+enEspera
+pideCita 5432
+pideCita 5431
+pideCita 4437
+pideCita 4417
+enEspera
+atiendeSolicitudes
+administra 528
+administra 134
+administra 134
+administra 134
+anioYvacunas 1985 50
+atiendeSolicitudes
+administra 528
+administra 134
+administra 134
+
+SALIDA ASOCIADA
+===============
+REGISTRO_CENTRO_OK
+REGISTRO_CENTRO_OK
+REGISTRO_CIUDADANO_OK
+REGISTRO_CIUDADANO_OK
+REGISTRO_CIUDADANO_OK
+REGISTRO_CIUDADANO_OK
+NO_HAY_PETICIONES
+REGISTRO_CITA_OK
+REGISTRO_CITA_OK
+REGISTRO_CITA_OK
+REGISTRO_CITA_OK
+HAY_PETICIONES
+ASIGNACIONES: 5432 - 134 - gregorio_sabanion // 5431 - 528 - cinico_san_carlos // 4437 - 134 - gregorio_sabanion // 
+ADMINISTRADA
+ADMINISTRADA
+ADMINISTRADA
+NO_ADMINISTRADA
+FIJADOS_ANIO_NUMVACUNAS
+ASIGNACIONES: 4417 - 134 - gregorio_sabanion // 
+NO_ADMINISTRADA
+ADMINISTRADA
+NO_ADMINISTRADA
+
+
+
+
+
+
+
+
+ 
+ 
+
+

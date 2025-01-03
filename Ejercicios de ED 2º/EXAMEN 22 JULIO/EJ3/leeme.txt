@@ -1,0 +1,106 @@
+Material proporcionado
+======================
+main3.cpp: El programa principal que lee y ejecuta casos. 
+Dicho programa NO debe modificarse.
+
+ColeccionPeliculas.h:  Definición de la parte pública de la clase "ColeccionPeliculas" 
+y otras definiciones auxiliares. A esta definición 
+deben añadirse los detalles de representación, en la parte privada. 
+Así mismo, en este archivo podrán realizarse las definiciones auxiliares 
+e inclusiones de bibliotecas que se consideren oportunas.
+
+ColeccionPeliculas.cpp: Aquí deben implementarse las operaciones del TAD.
+Aparte de implementar los distintos métodos de la clase, deberá indicarse
+y justificarse su complejidad en los comentarios que los preceden.
+En este archivo puede implementarse también todos aquellos métodos 
+auxiliares que se consideren oportunos. 
+
+IMPORTANTE: Debes incluir también tu nombre y apellidos y tu usuario del juez
+al comienzo de los comentarios que aparecen en ColeccionPeliculas.h y 
+ColeccionPeliculas.cpp para tal fin.
+
+
+Formato de los archivos de entrada y respuestas para las entradas
+=================================================================
+El main lee y ejecuta una serie de órdenes correspondientes a
+acciones a realizar sobre un sistema para la gestión de colecciones de películas.
+Cada archivo de entrada contiene una sucesión de órdenes.
+
+Las posibles órdenes son las siguientes (se indica la respuesta asociada a la orden)
+
+-an_categoria c: Añade la categoria 'c' al sistema. Como respuesta imprime OK
+si la categoría ha sido añadida con éxito, o CATEGORIA DUPLICADA en caso de que la
+categoría ya existiera en el sistema.
+
+-an_pelicula c p: Añade la pelicula 'p' a la categoría 'c'. Como respuesta imprime
+OK si la película ha sido añadida con éxito, CATEGORIA NO EXISTE si la categoría
+no existe, o PELICULA DUPLICADA si la pelicula 'p' se había añadido ya anteriormente a 
+la categoría.
+
+-lista_por_nombre c: Lista alfabéticamente las películas añadidas a la categoría
+'c'. Si 'c' no existe imprime CATEGORIA NO EXISTE.
+
+-lista_cronologicamente c: Lista las peliculas añadidas a la categoría 'c' en
+el orden inverso en el que éstas fueron añadidas, comenzando por las más recientes,
+terminando por las más antiguas. Si 'c' no existe imprime CATEGORIA NO EXISTE.
+
+-elimina_pelicula p: Elimina del sistema todo rastro de la película 'p'. Siempre
+imprime OK (ya que, si no había ningún rastro de 'p' en el sistema, la operación
+del TAD no tiene efecto).
+
+A continuación se muestra un ejemplo de e/s:
+
+
+ENTRADA
+=======
+an_categoria terror
+an_categoria ciencia_ficcion
+an_categoria terror
+an_pelicula terror la_noche_de_halloween
+an_pelicula terror viernes_13
+an_pelicula terror alien
+an_pelicula ciencia_ficcion star_wars
+an_pelicula ciencia_ficcion alien
+an_pelicula suspense alien
+an_pelicula terror alien
+lista_por_nombre terror
+lista_cronologicamente terror
+lista_por_nombre ciencia_ficcion
+lista_cronologicamente ciencia_ficcion
+lista_por_nombre suspense
+lista_cronologicamente suspense
+elimina_pelicula alien
+lista_por_nombre terror
+lista_cronologicamente terror
+lista_por_nombre ciencia_ficcion
+lista_cronologicamente ciencia_ficcion
+an_pelicula terror alien
+lista_por_nombre terror
+lista_cronologicamente terror
+
+SALIDA 
+======
+OK
+OK 
+CATEGORIA DUPLICADA
+OK
+OK
+OK
+OK
+OK
+CATEGORIA NO EXISTE
+PELICULA DUPLICADA
+[alien][la_noche_de_halloween][viernes_13]
+[alien][viernes_13][la_noche_de_halloween]
+[alien][star_wars]
+[alien][star_wars]
+CATEGORIA NO EXISTE
+CATEGORIA NO EXISTE
+OK
+[la_noche_de_halloween][viernes_13]
+[viernes_13][la_noche_de_halloween]
+[star_wars]
+[star_wars]
+OK
+[alien][la_noche_de_halloween][viernes_13]
+[alien][viernes_13][la_noche_de_halloween]

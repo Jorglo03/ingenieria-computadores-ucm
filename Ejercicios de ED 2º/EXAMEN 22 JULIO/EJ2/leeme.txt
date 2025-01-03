@@ -1,0 +1,47 @@
+Material proporcionado
+======================
+main2.cpp: El programa principal que realiza la prueba del
+algoritmo solicitado y el prototipo del subprograma que implementa 
+dicho algoritmo (int numImparColgantes(Arbin<int> a)). 
+Aparte de dicho subprograma pueden implementarse todos
+los subprogramas auxiliares que se consideren oportunos.
+Debe indicarse, así mismo, la complejidad resultante
+en el comentario que precede al subprograma pedido.
+
+IMPORTANTE: Deben ponerse el nombre y apellidos, así como el número de
+usuario en el juez asignado en el examen, al comienzo del archivo main2.cpp
+
+
+Formato de la entrada
+=====================
+El formato de cada caso es como sigue:
+- Cada línea contiene la descripción de un árbol
+- Para describir los árboles se sigue el siguiente convenio:
+* Los árboles vacíos se escriben como #
+* Los árboles simples se escriben como [c], con c el contenido del nodo.
+* Los árboles compuestos se escriben como (IcD), donde:  (i) I es el hijo izquierdo; (ii) c es el contenido de la raíz; (iii) D es el hijo derecho.
+
+
+Formato de la salida
+====================
+Para cada caso el programa imprime el número de nodos impar-colgantes.
+
+
+Ejemplo de entrada
+==================
+#
+[11]
+([3]1[5])
+(([7]8([9]6#))5(#13([15]3[6])))
+
+
+Salida asociada
+===============
+0
+0
+1
+4
+
+
+
+

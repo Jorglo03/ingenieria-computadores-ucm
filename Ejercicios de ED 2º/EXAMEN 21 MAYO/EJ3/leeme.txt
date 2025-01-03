@@ -1,0 +1,96 @@
+Material proporcionado
+======================
+main.cpp: El programa principal que lee y ejecuta casos. 
+Dicho programa NO debe modificarse.
+
+paqueteria.h:  Definición de la parte pública de la clase "Paqueteria" 
+y otras definiciones auxiliares. A esta definición 
+deben añadirse los detalles de representación, en la parte privada. 
+Así mismo, en este archivo podrán realizarse las definiciones auxiliares 
+e inclusiones de bibliotecas que se consideren oportunas.
+
+paqueteria.cpp: Aquí deben implementarse las operaciones del TAD.
+Aparte de implementar los distintos métodos de la clase, deberá indicarse
+y justificarse su complejidad en los comentarios que los preceden.
+En este archivo puede implementarse también todos aquellos métodos 
+auxiliares que se consideren oportunos. 
+
+
+
+Formato de los archivos de entrada 
+==================================
+El main lee y ejecuta una serie de órdenes correspondienes a
+acciones a realizar sobre un sistema para la gestión de la recepción y el reparto de paquetes.
+Cada archivo de entrada contiene una sucesión de órdenes.
+
+Las posibles órdenes son las siguientes:
+
+-recepciona id direccion peso
+Recepciona un paquete con identificador 'id', direccion de entrega 'direccion' y peso 'peso'.
+'direccion' es una cadena sin espacios en blanco.
+Como respuesta imprime OK si el identificador no está en el sistema o ID_PAQUETE_DUPLICADO en caso contrario.
+
+- datos id
+Obtiene la dirección de entrega y el peso del paquete con identificador 'id'
+Como respuesta imprime en una línea la dirección de entrega y el peso del paquete, 
+o bien ID_PAQUETE_NO_EXISTE si no hay un paquete con ese identificador en el sistema.
+
+- primeroEnFila
+Obtiene la información del primer paquete que está esperando para ser cargado.
+Como respuesta imprime en una línea el identificador, la dirección de entrega y el peso de dicho paquete,
+o bien NO_HAY_PAQUETES si no hay paquetes pendientes de ser cargados.
+
+- nuevoCamion peso
+Incorpora un camión con peso 'peso' a la fila de camiones.
+No da ninguna respuesta impresa.
+
+- primeroParaCarga
+Obtiene el peso que puede cargar el primer camión que está esperando a ser cargado en la fila de camiones.
+Como respuesta imprime en una línea el peso, o bien NO_HAY_CAMIONES si no hay ningún camión en la fila de camiones.
+
+- recogeInSitu id
+Elimina del sistema la información de un paquete con identificador 'id'.
+Como respuesta siempre imprime OK.
+
+- enEspera
+Informa de si hay paquetes o no.
+Como respuesta imprime HAY si hay paquetes o NO HAY si no los hay.
+
+- carga
+Simula la carga de un camión con el mayor número de paquetes posible conforme al orden en el que estos están esperando.
+Como respuesta imprime: NO_HAY_CAMIONES o NO_HAY_PAQUETES si no hay camiones o no hay paquetes, 
+VACIA si el peso del primer paquete en espera excede el que soporta el primer camión,
+o en una línea los identificadores de los paquetes cargados en el camión en otro caso.
+
+
+A continuación aparecen pequeños ejemplos, cada uno con su entrada y su salida asociada, 
+para probar de forma básica las operaciones pedidas.
+
+
+EJEMPLO DE ENTRADA
+==================
+recepciona 1 madrid 200
+recepciona 2 madrid 300
+recepciona 3 granada 400
+datos 3
+primeroEnFila
+nuevoCamion 600
+nuevoCamino 500
+primeroParaCarga
+recogeInSitu 2
+enEspera
+carga
+carga
+
+EJEMPLO DE SALIDA
+=================
+OK
+OK
+OK
+granada 400
+1 madrid 200
+600
+OK
+HAY
+1 3 
+NO_HAY_CAMIONES o NO_HAY_PAQUETES

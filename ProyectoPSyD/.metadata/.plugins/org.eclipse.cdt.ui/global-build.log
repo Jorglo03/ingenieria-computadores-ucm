@@ -1,0 +1,67 @@
+22:56:09 **** Incremental Build of configuration Debug for project proyecto ****
+cs-make all 
+'Building file: ../proyecto.c'
+'Invoking: ARM Sourcery Windows GCC C Compiler'
+arm-none-eabi-gcc -I../../BSP/include -O0 -Wall -Wa,-adhlns="proyecto.o.lst" -c -fmessage-length=0 -mapcs-frame -MMD -MP -MF"proyecto.d" -MT"proyecto.d" -mcpu=arm7tdmi -g3 -gdwarf-2 -o "proyecto.o" "../proyecto.c"
+../proyecto.c:74:6: warning: return type of 'main' is not 'int'
+'Finished building: ../proyecto.c'
+' '
+'Building target: proyecto.elf'
+'Invoking: ARM Sourcery Windows GCC C Linker'
+arm-none-eabi-gcc -T"../proyecto.ld" -nostartfiles -L../../BSP/Debug -Wl,-Map,proyecto.map -mcpu=arm7tdmi -g3 -gdwarf-2 -o "proyecto.elf"  ./proyecto.o ./sensorsEmulator.o   -lBSP
+'Finished building target: proyecto.elf'
+' '
+'Invoking: ARM Sourcery Windows GNU Create Flash Image'
+arm-none-eabi-objcopy -O binary proyecto.elf  "proyecto.hex"
+'Finished building: proyecto.hex'
+' '
+'Invoking: ARM Sourcery Windows GNU Create Listing'
+arm-none-eabi-objdump -h -S proyecto.elf > "proyecto.lst"
+'Finished building: proyecto.lst'
+' '
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley proyecto.elf
+   text	   data	    bss	    dec	    hex	filename
+  57340	  38424	   1130	  96894	  17a7e	proyecto.elf
+'Finished building: proyecto.siz'
+' '
+22:56:20 **** Incremental Build of configuration Debug for project proyecto ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley proyecto.elf
+   text	   data	    bss	    dec	    hex	filename
+  57340	  38424	   1130	  96894	  17a7e	proyecto.elf
+'Finished building: proyecto.siz'
+' '
+23:11:20 **** Incremental Build of configuration Debug for project proyecto ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley proyecto.elf
+   text	   data	    bss	    dec	    hex	filename
+  57340	  38424	   1130	  96894	  17a7e	proyecto.elf
+'Finished building: proyecto.siz'
+' '
+23:14:59 **** Incremental Build of configuration Debug for project proyecto ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley proyecto.elf
+   text	   data	    bss	    dec	    hex	filename
+  57340	  38424	   1130	  96894	  17a7e	proyecto.elf
+'Finished building: proyecto.siz'
+' '
+23:19:27 **** Incremental Build of configuration Debug for project proyecto ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley proyecto.elf
+   text	   data	    bss	    dec	    hex	filename
+  57340	  38424	   1130	  96894	  17a7e	proyecto.elf
+'Finished building: proyecto.siz'
+' '
+23:23:58 **** Incremental Build of configuration Debug for project proyecto ****
+cs-make all 
+'Invoking: ARM Sourcery Windows GNU Print Size'
+arm-none-eabi-size  --format=berkeley proyecto.elf
+   text	   data	    bss	    dec	    hex	filename
+  57340	  38424	   1130	  96894	  17a7e	proyecto.elf
+'Finished building: proyecto.siz'
+' '

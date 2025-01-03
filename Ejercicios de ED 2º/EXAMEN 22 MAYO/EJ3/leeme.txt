@@ -1,0 +1,284 @@
+Material proporcionado
+======================
+main.cpp: El programa principal que lee y ejecuta casos. 
+Dicho programa NO debe modificarse.
+
+centroSalud.h:  Definición de la parte pública de la clase "CentroSalud" 
+y otras definiciones auxiliares. A esta definición 
+deben añadirse los detalles de representación, en la parte privada. 
+Así mismo, en este archivo podrán realizarse las definiciones auxiliares 
+e inclusiones de bibliotecas que se consideren oportunas.
+
+centroSalud.cpp: Aquí deben implementarse las operaciones del TAD.
+Aparte de implementar los distintos métodos de la clase, deberá indicarse
+y justificarse su complejidad en los comentarios que los preceden.
+En este archivo puede implementarse también todos aquellos métodos 
+auxiliares que se consideren oportunos. 
+
+IMPORTANTE: Debes incluir también tu nombre y apellidos y tu usuario del juez
+al comienzo del comentario que aparece en cola.h para tal fin.
+
+
+Formato de los archivos de entrada y respuestas para las entradas
+=================================================================
+El main lee y ejecuta una serie de órdenes correspondientes a
+acciones a realizar sobre un sistema para la gestión de los pacientes del centro de salud.
+Cada archivo de entrada contiene una sucesión de órdenes.
+
+Las posibles órdenes son las siguientes (se indica la respuesta asociada a la orden)
+
+-registraMedico num_colegiado npac
+Añade un médico con nº de colegiado 'num_colegiado' y nº de pacientes 'npac'.
+Como respuesta imprime REGISTRO_MEDICO_OK si el nº de colegiado no está en el sistema 
+o ERROR_ID_MEDICO_DUPLICADO en caso contrario.
+
+- registraPaciente codigo_id nombre num_colegiado
+Añade un nuevo paciente con código de identificación 'codigo_id' y nombre 'nombre', 
+que estará vinculado al médico con nº de colegiado 'num_colegiado'.
+El nombre es una cadena sin espacios en blanco.
+Como respuesta imprime REGISTRO_PACIENTE_OK si el código de identificación no está en el sistema, 
+o bien ERROR_REGISTRO_PACIENTE en caso contrario.
+
+- pideCita codigo_id
+Cita al paciente con código de identificación 'codigo_id' con el médico al que está vinculado.
+Como respuesta imprime CITA_OK si la cita se puede concertar, CITA_NO_OK si la cita no se puede concertar,
+o bien ERROR_REGISTRO_CITA si no está el paciente en el sistema.
+ 
+- citados num_colegiado
+Visualiza por pantalla los pacientes citados con el médico con nº de colegiado 'num_colegiado'.
+Como respuesta imprime CITADOS: seguido de los códigos de identificación de los pacientes citados 
+(separados con //) si hay pacientes citados, CITADOS: si no hay pacientes citados, o bien
+CITADOS: ERROR_MEDICO_INEXISTENTE si el médico no está en el sistema.
+
+- cancelaCita codigo_id
+Cancela la cita que tenga el paciente con código de identificación 'codigo_id'
+Como respuesta imprime CANCELACION_OK si se puede llevar a cabo la cancelación, 
+CANCELACION_NO_OK cuando no se puede llevar a cabo, o bien ERROR_PACIENTE_INEXISTENTE si el 
+paciente no está en el sistema.
+
+- vinculados num_colegiado
+Visualiza por pantalla los códigos de identificación y nombres de los pacientes vinculados 
+con el médico con número de colegiado 'num_colegiado'.
+Como respuesta imprime VINCULADOS: seguido de los códigos y nombres de los pacientes vinculados
+(separados con //) si hay pacientes vinculados, VINCULADOS:  si no hay pacientes vinculados, o bien
+VINCULADOS: ERROR_MEDICO_INEXISTENTE si el médico no está en el sistema.
+
+
+A continuación puedes encontrar varios ejemplos de entrada con su salida asociada.
+
+
+EJEMPLO DE ENTRADA 1
+====================
+registraMedico 1 1
+registraMedico 2 3
+registraMedico 1 10
+
+EJEMPLO DE SALIDA 1
+===================
+REGISTRO_MEDICO_OK
+REGISTRO_MEDICO_OK
+ERROR_ID_MEDICO_DUPLICADO
+
+
+EJEMPLO DE ENTRADA 2
+====================
+registraMedico 1 1
+registraMedico 2 3
+registraPaciente 10 paciente10 1
+registraPaciente 10 paciente10 1
+registraPaciente 20 paciente20 3
+registraPaciente 10 paciente10 3
+
+EJEMPLO DE SALIDA 2
+===================
+REGISTRO_MEDICO_OK
+REGISTRO_MEDICO_OK
+REGISTRO_PACIENTE_OK
+ERROR_REGISTRO_PACIENTE
+ERROR_REGISTRO_PACIENTE
+ERROR_REGISTRO_PACIENTE
+
+
+EJEMPLO DE ENTRADA 3
+====================
+registraMedico 1 1
+registraMedico 2 3
+registraPaciente 10 paciente10 1
+registraPaciente 20 paciente20 1
+registraPaciente 30 paciente20 2
+registraPaciente 40 paciente40 2
+registraPaciente 50 paciente50 2
+pideCita 10
+pideCita 20
+pideCita 30
+pideCita 40
+pideCita 50
+pideCita 50
+pideCita 60
+
+EJEMPLO DE SALIDA 3
+===================
+REGISTRO_MEDICO_OK
+REGISTRO_MEDICO_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+CITA_OK
+CITA_NO_OK
+CITA_OK
+CITA_OK
+CITA_OK
+CITA_NO_OK
+ERROR_REGISTRO_CITA
+
+
+EJEMPLO DE ENTRADA 4
+====================
+registraMedico 1 1
+registraMedico 2 3
+registraMedico 3 10
+registraPaciente 10 paciente10 1
+registraPaciente 20 paciente20 2
+registraPaciente 30 paciente20 2
+registraPaciente 40 paciente40 2
+pideCita 10
+pideCita 20
+pideCita 30
+pideCita 40
+citados 1
+citados 2
+citados 3
+citados 4
+
+EJEMPLO DE SALIDA 4
+===================
+REGISTRO_MEDICO_OK
+REGISTRO_MEDICO_OK
+REGISTRO_MEDICO_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+CITA_OK
+CITA_OK
+CITA_OK
+CITA_OK
+CITADOS: 10 //
+CITADOS: 40 // 30 // 20 //
+CITADOS:
+CITADOS: ERROR_MEDICO_INEXISTENTE
+
+
+EJEMPLO DE ENTRADA 5
+====================
+registraMedico 1 1
+registraPaciente 10 paciente10 1
+pideCita 10
+citados 1
+cancelaCita 10
+citados 1
+cancelaCita 10
+cancelaCita 20
+
+EJEMPLO DE SALIDA 5
+===================
+REGISTRO_MEDICO_OK
+REGISTRO_PACIENTE_OK
+CITA_OK
+CITADOS: 10 //
+CANCELACION_OK
+CITADOS:
+CANCELACION_NO_OK
+ERROR_PACIENTE_INEXISTENTE
+
+
+EJEMPLO DE ENTRADA 6
+====================
+registraMedico 1 1
+registraMedico 2 3
+registraPaciente 10 paciente10 1
+registraPaciente 20 paciente20 2
+registraPaciente 30 paciente20 2
+registraPaciente 40 paciente40 2
+pideCita 10
+pideCita 20
+pideCita 30
+pideCita 40
+citados 1
+citados 2
+cancelaCita 30
+citados 1
+citados 2
+cancelaCita 40
+citados 1
+citados 2
+cancelaCita 10
+citados 1
+citados 2
+cancelaCita 10
+citados 1
+citados 2
+cancelaCita 20
+citados 1
+citados 2
+cancelaCita 50
+
+EJEMPLO DE SALIDA 6
+===================
+REGISTRO_MEDICO_OK
+REGISTRO_MEDICO_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+CITA_OK
+CITA_OK
+CITA_OK
+CITA_OK
+CITADOS: 10 //
+CITADOS: 40 // 30 // 20 //
+CANCELACION_OK
+CITADOS: 10 //
+CITADOS: 40 // 20 //
+CANCELACION_OK
+CITADOS: 10 //
+CITADOS: 20 //
+CANCELACION_OK
+CITADOS:
+CITADOS: 20 //
+CANCELACION_NO_OK
+CITADOS:
+CITADOS: 20 //
+CANCELACION_OK
+CITADOS:
+CITADOS:
+ERROR_PACIENTE_INEXISTENTE
+
+
+EJEMPLO DE ENTRADA 7
+====================
+registraMedico 1 1
+vinculados 1
+registraMedico 2 3
+registraPaciente 10 paciente10 1
+registraPaciente 20 paciente20 2
+registraPaciente 30 paciente20 2
+registraPaciente 40 paciente40 2
+vinculados 1
+vinculados 2
+vinculados 3
+
+EJEMPLO DE SALIDA 7
+===================
+REGISTRO_MEDICO_OK
+VINCULADOS:
+REGISTRO_MEDICO_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+REGISTRO_PACIENTE_OK
+VINCULADOS: 10-paciente10 //
+VINCULADOS: 20-paciente20 // 30-paciente20 // 40-paciente40 //
+VINCULADOS: ERROR_MEDICO_INEXISTENTE

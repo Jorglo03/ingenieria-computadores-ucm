@@ -1,0 +1,32 @@
+Material proporcionado
+======================
+main.cpp: El programa principal que lee y ejecuta casos. 
+Dicho programa NO debe modificarse.
+
+pila.h: TAD Pila visto en clase, que incorpora el prototipo de la nueva operación 
+pedida al principio de la parte pública. 
+El ejercicio debe resolverse en este archivo, realizando la implementación de 
+la operación, y justificando la complejidad en el comentario habilitado al respecto.
+
+Formato de los archivos de entrada 
+==================================
+En la primera línea aparece el número de casos.
+Cada caso de prueba aparece en una línea posterior y contiene la secuencia de números
+enteros positivos de la pila DESDE EL FONDO A LA CIMA y termina con el -1
+
+Formato de los archivos de salida
+=================================
+Para cada caso de prueba se imprimen los elementos de la pila resultante, DESDE LA CIMA AL FONDO
+
+
+Ejemplo de entrada 
+==================
+2
+15 7 3 32 21 -1
+3 56 3 32 21 -1
+
+
+Salida producida
+================
+3 21 32 7 15
+3 21 32 56 3

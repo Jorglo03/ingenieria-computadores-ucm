@@ -1,0 +1,48 @@
+Material proporcionado
+======================
+main.cpp: El programa principal que lee y ejecuta casos. 
+Dicho programa NO debe modificarse.
+cola.h:  El TAD Cola, ampliado con:
+(1) La operación 'penalizaSecuencia', que debe implementarse.
+(2) Un método 'imprime' que realiza la impresión de la cola.
+
+El ejercicio debe resolverse, por tanto, sobre el archivo 'cola.h'
+proporcionado. Aparte de implementar la operación, debe justificarse
+también su complejidad en los comentarios que preceden a la operación.
+
+IMPORTANTE: Debes incluir también tu nombre y apellidos y tu usuario del juez al comienzo
+del comentario que aparece en cola.h para tal fin.
+
+
+Formato de los archivos de entrada y respuestas para las entradas
+=================================================================
+Cada caso de prueba consta de tres líneas:
+(1) El tamaño de la cola sobre la que va a operarse.
+(2) Los elementos de la cola (una secuencia de números enteros), primero el
+    primer elemento de la cola, después el segundo... y así sucesivamente
+(3) Las posiciones de inicio y fin del tramo que va a penalizarse (dos enteros indicando dichas posiciones).
+El programa, entonces, invoca a la operación 'penalizaSecuencia', e imprime la cola
+resultante (delimitada entre / y /). 
+Los casos terminan con una entrada que contiene únicamente -1
+
+A continuación puedes encontrar un ejemplo de entrada/salida
+
+
+ENTRADA
+=======
+5
+15 3 5 32 21
+2 3
+5
+15 3 5 32 21
+0 3
+5
+15 3 5 32 21
+2 4
+-1
+
+SALIDA
+======
+/15 3 21 5 32/
+/21 15 3 5 32/
+/15 3 5 32 21/

@@ -1,0 +1,43 @@
+Material proporcionado
+======================
+main.cpp: El programa principal que realiza la prueba del
+algoritmo solicitado y el prototipo de la función que 
+debe ejecutar dicho algoritmo (int num_correctivos(const Arbin<int>& a)). 
+Aparte de dicha función, pueden implementarse todos
+los subprogramas auxiliares que se considere oportuno.
+Debe indicarse, así mismo, la complejidad resultante
+en el comentario que precede a la función.
+
+IMPORTANTE: Deben ponerse el nombre y apellidos, así como el número de
+usuario en el juez asignado en el examen, al comienzo del archivo main.cpp
+
+
+Formato de la entrada
+=====================
+Cada línea contiene la descripción de un árbol binario. 
+Para describir los árboles se sigue el siguiente convenio:
+-Los árboles vacíos se escriben como #
+-Los árboles simples se escriben como [c],
+ con 'c' el contenido del nodo.
+-Los árboles compuestos se escriben como 
+ (IcD), donde: (i) I es el hijo izquierdo;
+ (ii) c es el contenido de la raiz; 
+ (iii) D es el hijo derecho. 
+
+Formato de la salida
+====================
+Para cada árbol se genera una linea con
+el número de nodos correctivos en dicho 
+árbol
+
+Ejemplo de entrada
+==================
+(([3]9([1]9#))12(#13([6]3[4])))
+(([3]7([1]9#))12(#13([6]-2[4])))
+(([3]9([1]9#))22(#13([6]3[4])))
+
+Salida asociada
+===============
+3
+0
+4

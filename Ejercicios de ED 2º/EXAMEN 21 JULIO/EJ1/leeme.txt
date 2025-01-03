@@ -1,0 +1,47 @@
+Material proporcionado
+======================
+main.cpp: El programa principal que lee y ejecuta casos. 
+Dicho programa NO debe modificarse.
+
+lista.h: TAD Lista basado en nodos doblemente enlazados visto en clase, que incorpora el prototipo 
+de la nueva operación pedida al principio de la parte pública. Se incluye también la exclusión 
+de los casos en los que k<3, por lo que únicamente tendrás que centrarte en implementar
+la operación en el caso en el que k>=3. 
+El ejercicio debe resolverse en este archivo, realizando la implementación de 
+la operación, y justificando la complejidad en el comentario habilitado al respecto.
+
+IMPORTANTE: Deben ponerse el nombre y apellidos, así como el número de
+usuario en el juez asignado en el examen, al comienzo del archivo lista.h.
+
+Formato de los archivos de entrada 
+==================================
+Cada caso de prueba consta de tres líneas:
+(i) En la primera se indica el número k.
+(ii) En la segunda, el número de elementos de la lista.
+(iii) En la tercera los elementos de la lista, en orden, desde el primero hasta el último. 
+La entrada termina con una línea que contiene -1.
+
+Formato de los archivos de salida
+=================================
+Para cada caso de prueba se imprimen los elementos de la lista k-maleada,
+un signo #, y los elementos de la lista k-maleada en orden inverso (empezando
+por el último, terminando en el primero). Estas impresiones se realizan
+utilizando métodos añadidos a la clase Lista proporcionada para resolver
+el ejercicio. 
+
+Ejemplo de entrada 
+==================
+4
+10
+5 1 3 4 2 6 9 8 7 0
+5
+10
+5 1 3 4 2 6 9 8 7 0
+-1
+
+
+Salida producida
+================
+5 2 3 4 1 6 0 8 7 9#9 7 8 0 6 1 4 3 2 5
+5 6 3 4 2 1 9 8 7 0#0 7 8 9 1 2 4 3 6 5
+

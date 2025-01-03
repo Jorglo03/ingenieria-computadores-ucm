@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;BSP/Debug/libcommon.a&apos; to &apos;libBSP.a&apos;" description="Rename resource &apos;libcommon.a&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Debug/libcommon.a" name="libBSP.a" stamp="1431282004058" updateReferences="true"/>
+</session>
